@@ -11,11 +11,11 @@ class ShoppingApp < Sinatra::Base
 
   get '/items' do
     @items = Item.find_by(params[:term])
-    erb :items_index
+    erb :"items/index"
   end
 
-  get '/items/new' do 
-    erb :new_item
+  get '/items/new' do
+    erb :"items/new"
   end
 
   post '/items' do
@@ -31,11 +31,11 @@ class ShoppingApp < Sinatra::Base
 
   get '/users' do
     @users = User.all
-    erb :users_index
+    erb :"users/index"
   end
 
   get '/users/new' do
-    erb :new_user
+    erb :"users/new"
   end
 
   post '/users' do
