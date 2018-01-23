@@ -63,11 +63,11 @@ The value of the city should be able to be modified based on my URL query params
 
 #### Activity 1
 
-Take a look in `views/new_item.erb`. You'll see an existing form, but something is wrong with it! Use your debugging skills and tools to fix *just the form*. 
+Take a look in `views/items/new.erb`. You'll see an existing form, but something is wrong with it! Use your debugging skills and tools to fix *just the form*. 
 
 #### Activity 2
 
-You'll see a route in your `shopping_app.rb` to `get '/users/new'`. It renders a view template that currently blank. Create a form in this file that will accept two attributes: a name and an email address. Use the `<label>` HTML tag to differentiate between the name and email address input fields. 
+You'll see a route in your `shopping_app.rb` to `get '/users/new'`. It renders a view template that is currently blank. Create a form in this file that will accept two attributes: a name and an email address. Use the `<label>` HTML tag to differentiate between the name and email address input fields. 
 
 Create a route that handles the submission of this form (follow the conventions from our CRUD chart) and ultimately brings the user back to the list of all users. 
 
