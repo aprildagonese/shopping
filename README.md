@@ -4,7 +4,7 @@ Yesterday, we talked about three ways to pass data in Sinatra. Now you'll get to
 
 In this workshop, you'll practice passing data between a client and a Sinatra server.
 
-Remember, there are a few different ways to pass data: through the query string parameters in the URL, through dynamic parameters in the URL, and through forms. We'll be focus on passing data via query params and via forms.
+Remember, there are a few different ways to pass data: through the query string parameters in the URL, through dynamic parameters in the URL, and through forms. We'll focus on passing data via query params and via forms.
 
 ## Setup
 
