@@ -10,7 +10,13 @@ class ShoppingApp < Sinatra::Base
   end
 
   get '/items' do
-    @items = Item.find_by(params[:term])
+    @items = Item.find_by(params[:filter])
+    erb :"items/index"
+  end
+
+  get '/items/:location' do
+    @location = params[:location]
+    @items = Item.find_by(params[:filter])
     erb :"items/index"
   end
 
