@@ -14,12 +14,6 @@ class ShoppingApp < Sinatra::Base
     erb :"items/index"
   end
 
-  get '/items/:location' do
-    @location = params[:location]
-    @items = Item.find_by(params[:filter])
-    erb :"items/index"
-  end
-
   get '/items/new' do
     erb :"items/new"
   end
@@ -35,6 +29,12 @@ class ShoppingApp < Sinatra::Base
     redirect '/items'
   end
 
+  get '/items/:location' do
+    @location = params[:location]
+    @items = Item.find_by(params[:filter])
+    erb :"items/index"
+  end
+
   get '/users' do
     @users = User.all
     erb :"users/index"
@@ -45,7 +45,19 @@ class ShoppingApp < Sinatra::Base
   end
 
   post '/users' do
-    user = User.new
+    user = User.new(params[:user])
+    user.save
     redirect '/users'
   end
+
+  delete '/users/:id' do |id|
+    User.destroy(id.to_i)
+    redirect '/users'
+  end
+
+  get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :"users/show"
+  end
+
 end
